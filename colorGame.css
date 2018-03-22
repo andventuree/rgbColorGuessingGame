@@ -1,0 +1,27 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family: 'Montserrat', 'Avenir';
+	font-weight: normal;
+}
+
+.square {
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+	/* gives element rounded corners
+	0% for no corners, over 50% for cirles */
+	border-radius: 40%;
+	transition: background 0.6s;
+		/* because transition property does not work for every browser */
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+}
+
+#container {
+	margin: 20px auto;
+	max-width: 600px;
+
+}
