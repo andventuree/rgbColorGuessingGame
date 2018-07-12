@@ -10,4 +10,4 @@ Find the color that is the exact mix of RGB!
 
 ##Difficulty settings
 
-![Game Function Gif](imgs/Easy Mode.png)
+![Game Function Gif](imgs/Easy-mode.png)
