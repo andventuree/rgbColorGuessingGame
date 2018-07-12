@@ -1,5 +1,5 @@
 body {
-	background-color: #232323;
+	background-color: rgb(208,208,208);
 	margin: 0;
 	font-family: 'Montserrat', 'Avenir';
 	font-weight: normal;
@@ -24,4 +24,58 @@ body {
 	margin: 20px auto;
 	max-width: 600px;
 
+}
+
+h1 {
+	color: white;
+	line-height: 1.1;
+	text-align: center;
+	background-color: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#colorDisplay {
+	font-size: 200%;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
+}
+
+
+#stripe {
+	background: white;
+	height: 30px;
+	text-align: center;
+}
+
+.selected {
+	background: gold;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-space: 1px;
+	font-size: inherit;
+	/* adds effect of fading in and out */
+	transition: all 1s;
+		-webkit-transition: 1s;
+		-moz-transition: 1s;
+	outline: none;
+
+}
+
+/* makes the button a certain color when hovered over */
+button:hover {
+	color: white;
+	background: gold;
 }

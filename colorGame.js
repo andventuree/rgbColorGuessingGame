@@ -22,7 +22,7 @@ var h1 = document.querySelector('h1');
 var resetButton = document.querySelector('#reset');
 var easyBtn = document.getElementById('easyBtn');
 var hardBtn = document.getElementById('hardBtn');
-var modeButtons = document.querySelectorAll('.mode'); 
+var modeButtons = document.querySelectorAll('.mode');
 
 //need to call the init() function to get things started
 init();
@@ -35,15 +35,15 @@ function init() {
 }
 
 function setupModeButtons() {
-	for(var i = 0; i < squares.length; i++){
+	for (var i = 0; i < squares.length; i++) {
 		// add initial colors to squares
 		squares[i].style.background = colors[i];
 		//add click listeners to squares
-		squares[i].addEventListener("click", function() {
+		squares[i].addEventListener("click", function () {
 			//grab color of clicked squares
 			var clickedColor = this.style.background;
 			//compare color to pickedColor
-			if(clickedColor === pickedColor) {
+			if (clickedColor === pickedColor) {
 				messageDisplay.textContent = 'You Got It!';
 				resetButton.textContent = 'Play Again!';
 				//want to change all the squares to be the right color
@@ -51,31 +51,31 @@ function setupModeButtons() {
 				h1.style.background = pickedColor;
 			} else {
 				//changes clicked square to background color making it disappear
-				this.style.background = "#232323";
+				this.style.background = "rgb(208,208,208)";
 				messageDisplay.textContent = 'Try Again, Potato!';
 			}
-		}); 
+		});
 	}
 }
 
-//rule of thumb - if it takes 10 lines of code to do something, 
+//rule of thumb - if it takes 10 lines of code to do something,
 //should break it to be function
 function setupSquares() {
 	//mode button event listeners
-	for (var i = 0; i < modeButtons.length; i++ ){
-		modeButtons[i].addEventListener('click', function() {
+	for (var i = 0; i < modeButtons.length; i++) {
+		modeButtons[i].addEventListener('click', function () {
 			//remove the mode
 			modeButtons[0].classList.remove('selected');
 			modeButtons[1].classList.remove('selected');
 			//then add to the mode picked
 			this.classList.add('selected');
 			//turnary operator - shorter way to write an if stat
-			this.textContent === "Easy" ? numSquares = 3: numSquares = 9;
-				// if(this.textContent === "Easy") {
-				// 	numSquares = 3;
-				// } else {
-				// 	numSquares = 6;
-				// }
+			this.textContent === "Easy" ? numSquares = 3 : numSquares = 9;
+			// if(this.textContent === "Easy") {
+			// 	numSquares = 3;
+			// } else {
+			// 	numSquares = 6;
+			// }
 			reset();
 		});
 	}
@@ -94,7 +94,7 @@ function reset() {
 	messageDisplay.textContent = "";
 	//change color of squares
 	for (var i = 0; i < squares.length; i++) {
-		if(colors[i]) {
+		if (colors[i]) {
 			squares[i].style.display = 'block';
 			squares[i].style.background = colors[i];
 		} else {
@@ -108,18 +108,18 @@ function reset() {
 }
 
 
-// old single mode buttons - 
+// old single mode buttons -
 // //toggles hard and easy mode
 // easyBtn.addEventListener('click', function() {
 // 	hardBtn.classList.remove('selected');
 // 	easyBtn.classList.add('selected');
 // 	numSquares = 3
-// 	colors = generateRandomColor(numSquares); 
+// 	colors = generateRandomColor(numSquares);
 // 	pickedColor = pickColor();
 // 	colorDisplay.textContent = pickedColor;
 // 	for (var i = 0; i < squares.length; i++ ) {
 // 		if ( colors[i]){
-// 			squares[i].style.background = colors[i];  
+// 			squares[i].style.background = colors[i];
 // 		} else {
 // 			squares[i].style.background = '#232323';
 // 		}
@@ -134,27 +134,27 @@ function reset() {
 // 	pickedColor = pickColor();
 // 	colorDisplay.textContent = pickedColor;
 // 	for (var i = 0; i < squares.length; i++ ) {
-// 		squares[i].style.background = colors[i];  
+// 		squares[i].style.background = colors[i];
 // 		squares[i].style.display = 'block';
 // 	}
 // });
 
 
-resetButton.addEventListener('click', function (){
-reset();
+resetButton.addEventListener('click', function () {
+	reset();
 });
 
 //colorDisplay.textContent = pickedColor; - no longer need because it is run in the init function
 
 function changeColors(color) {
 	//loop thorugh all squares to chan ge color to match pickedColor
-	for ( var i = 0; i < squares.length; i++ ) {
+	for (var i = 0; i < squares.length; i++) {
 		//change each color to match given color
 		squares[i].style.background = color;
 	}
 }
 
-function pickColor () {
+function pickColor() {
 	var random = Math.floor(Math.random() * colors.length);
 	return colors[random];
 }
